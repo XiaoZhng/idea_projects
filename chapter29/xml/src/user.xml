@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<user>
+  <info>
+    <username>张三</username>
+    <password>123456</password>
+    <sex>男</sex>
+  </info>
+  <info>
+    <username>张三三</username>
+    <password>123456</password>
+    <sex>女</sex>
+  </info>
+</user>

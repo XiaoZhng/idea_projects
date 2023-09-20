@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>药品管理</title>
+    <style>
+        .content{
+            width: 100%;
+            margin: 100px auto;
+        }
+        #nav{
+            margin-left: 25%;
+        }
+        .title td{
+            text-align: center;
+        }
+        .logout{
+            float: right;
+            margin-right: 50px;
+            height: 50px;
+            width: 100px;
+        }
+        .logout > p{
+            position: absolute;
+            margin-top: 0;
+        }
+        .logout > a{
+            position: absolute;
+            margin-left: 50px;
+        }
+        #main{
+            margin-top: 20px;
+            margin-left: 25%;
+        }
+        #add{
+            margin-left: 25%;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div id="nav">
+        <form action="/searchDrugs" method="post">
+            药品名称：<input type="text" name="drugsName" id="drugsName" />
+            生产厂家：<input type="text" name="factory" id="factory" />
+            <input type="submit" value="查询" />
+            <span th:text="${searchError}"></span>
+        </form>
+    </div>
+    <div class="logout">
+        <p th:text="${session.user.userName}"></p>
+        <a th:href="@{'/logout'}">注销</a>
+    </div>
+    <div id="main">
+        <table th:border="1">
+            <tr class="title">
+                <td>药品ID</td>
+                <td>药品名称</td>
+                <td>生产厂家</td>
+                <td>规格</td>
+                <td>单位</td>
+                <td>单价</td>
+                <td>库存</td>
+                <td colspan="3">操作</td>
+            </tr>
+            <tr th:each="s:${drugs}">
+                <td th:text="${s.id}"></td>
+                <td th:text="${s.drugsName}"></td>
+                <td th:text="${s.factory}"></td>
+                <td th:text="${s.specifications}"></td>
+                <td th:text="${s.company}"></td>
+                <td th:text="${s.price}"></td>
+                <td th:text="${s.stock}"></td>
+                <td>
+                    <a th:href="@{'/update/' + ${s.id}}">修改</a>
+                </td>
+                <td>
+                    <a th:href="@{'/delete/' + ${s.id}}">删除</a>
+                </td>
+                <td>
+                    <a th:href="@{'/updateStock/' + ${s.id}}">改库存</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <form action="/add" id="add">
+        <input type="submit" value="添加" />
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# 应用名称
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    #修改url，添加 serverTimezone时区设定
+#    url: jdbc:mysql://localhost:3306/boot_db?serverTimezone=UTC
+#    username: root
+#    password: root
+#    type: com.alibaba.druid.pool.DruidDataSource
+
+
+#推荐使用这种配置方式：
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      #修改url，添加 serverTimezone时区设定
+      url: jdbc:mysql://localhost:3306/boot_db?serverTimezone=UTC
+      username: root
+      password: root
+

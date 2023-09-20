@@ -1,0 +1,15 @@
+#使用 include：执行顺序是后面覆盖前面
+#The following 3 profiles are active: "devMVC", "devDB", "dev"
+#spring:
+#  profiles:
+#    active: dev
+#    include: devMVC, devDB
+
+#使用 group：现在启动 dev是启动 dev这个组中的配置文件["dev": devMVC, devDB]，生效的是 devDB
+#The following 3 profiles are active: "dev", "devMVC", "devDB"
+spring:
+  profiles:
+    active: @profile.active@
+    group:
+      "dev": devDB, devMVC
+      "pro": proMVC, proDB

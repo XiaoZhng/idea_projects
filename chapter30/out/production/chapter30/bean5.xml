@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--普通bean-->
+<!--    <bean id="book" class="com.spring.factorybean.Book"></bean>-->
+
+<!--    <bean id="aa" class="com.spring.factorybean.AA" scope="prototype">-->
+<!--        <property name="name" value="jack"></property>-->
+<!--    </bean>-->
+
+    <!--bean的生命周期过程-->
+    <bean id="life" class="com.spring.factorybean.Life" destroy-method="destroyBean">
+        <property name="name" value="tom"></property>
+    </bean>
+
+    <!--配置后置处理器-->
+    <!--<bean id="myBeanPost" class="com.spring.factorybean.MyBeanPost"></bean>-->
+
+    <!--自动装配-->
+    <!--
+    bean标签属性autowire，配置自动装配
+    autowire属性常用两个值：
+    byName根据属性名称注入，注入值bean的id值和类属性名称一样
+    byType根据属性类型注入
+    -->
+    <!--<bean id="life" class="com.spring.factorybean.Life" autowire="byName"></bean>-->
+    <!--<bean id="aa" class="com.spring.factorybean.AA"></bean>-->
+</beans>

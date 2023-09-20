@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <!--扫描注解-->
+    <context:component-scan base-package="com.mvc"></context:component-scan>
+    
+    <!-- 配置Thymeleaf视图解析器 -->
+    <bean id="viewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="order" value="1"/>
+        <property name="characterEncoding" value="UTF-8"/>
+        <property name="templateEngine">
+            <bean class="org.thymeleaf.spring5.SpringTemplateEngine">
+                <property name="templateResolver">
+                    <bean class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+
+                        <!-- 视图前缀 -->
+                        <property name="prefix" value="/WEB-INF/templates/"/>
+
+                        <!-- 视图后缀 -->
+                        <property name="suffix" value=".html"/>
+                        <property name="templateMode" value="HTML5"/>
+                        <property name="characterEncoding" value="UTF-8" />
+                    </bean>
+                </property>
+            </bean>
+        </property>
+    </bean>
+    
+    <!--配置视图控制器-->
+    <mvc:view-controller path="/" view-name="index"></mvc:view-controller>
+    
+    <!--开启mvc注解驱动-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+    
+    <!--开启对静态资源的访问，defaultServlet-->
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+
+    <!--文件解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
+
+    <!--开启拦截器-->
+    <mvc:interceptors>
+        <!--<bean class="com.mvc.Interceptor.FirstInterceptor"></bean>-->
+        <!--拦截器必须实现 HandlerInterceptor接口，ref标签中的bean属性才能匹配上-->
+        <ref bean="firstInterceptor"></ref>
+        <ref bean="secondInterceptor"></ref>
+        <!--以上的两种方式都是根据DispatcherServlet所处理的请求进行拦截-->
+        <mvc:interceptor>
+            <!--mvc:mapping：设置需要拦截的请求-->
+            <mvc:mapping path="/**"/>
+            <!--mvc:exclude-mapping：设置需要排除的请求，即不需要拦截的请求-->
+            <mvc:exclude-mapping path="/"/>
+            <ref bean="firstInterceptor"></ref>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <!--配置异常处理器-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!--
+                    key：表示处理器方法执行过程中出现的异常(全类名)
+                    值表示若出现执行异常时，设置一个新的视图名称，跳转到指定页面
+                -->
+                <prop key="java.lang.ArithmeticException">error</prop>
+            </props>
+        </property>
+        <!--exceptionAttribute：设置一个属性名，将出现的异常信息在请求域中进行共享-->
+        <property name="exceptionAttribute" value="exception"></property>
+    </bean>
+
+</beans>

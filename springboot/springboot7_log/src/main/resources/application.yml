@@ -1,0 +1,21 @@
+#debug: true
+
+#建议这样用:
+logging:
+  level:
+    root: info
+  #设置日志模板格式
+  pattern:
+    # %d：日期   %p：日志级别   %clr()：颜色   %16thread：线程，16个占位  %c：类路径
+    # %clr(%-40.40c){cyan}：类名占位40，-：向左对齐  .40：控制内容截取(内容长度)
+    # {cyan}：设置颜色为青色  %m：消息   %n：换行
+    console: "%d %clr(%5p) --- [%16thread] %clr(%-40.40c){cyan} : %m %n"
+  #设置日志文件
+  file:
+    name: servlet.log
+  logback:
+    rollingpolicy:
+      #设置日志文件的最大存储空间
+      max-file-size: 5KB
+      #设置日志文件的命名方式
+      file-name-pattern: servlet.%d{yyyy-MM-dd}.%i.log

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.io.BufferedOutputStream</OriginalElement>
+  <nodes>
+    <node x="66.99999999999999" y="168.0">java.io.OutputStream</node>
+    <node x="159.0" y="84.0">java.io.Closeable</node>
+    <node x="21.0" y="277.0">java.io.FilterOutputStream</node>
+    <node x="140.0" y="0.0">java.lang.AutoCloseable</node>
+    <node x="0.0" y="410.0">java.io.BufferedOutputStream</node>
+    <node x="4.0" y="84.0">java.io.Flushable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.io.Closeable" target="java.lang.AutoCloseable">
+      <point x="0.0" y="-17.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="java.io.BufferedOutputStream" target="java.io.FilterOutputStream">
+      <point x="0.0" y="-64.5" />
+      <point x="0.0" y="41.5" />
+    </edge>
+    <edge source="java.io.FilterOutputStream" target="java.io.OutputStream">
+      <point x="0.0" y="-41.5" />
+      <point x="0.0" y="29.5" />
+    </edge>
+    <edge source="java.io.OutputStream" target="java.io.Flushable">
+      <point x="-41.0" y="-29.5" />
+      <point x="107.99999999999999" y="143.0" />
+      <point x="71.5" y="143.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="java.io.OutputStream" target="java.io.Closeable">
+      <point x="41.0" y="-29.5" />
+      <point x="190.0" y="143.0" />
+      <point x="226.5" y="143.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="172.0" y="272.0" />
+  <SelectedNodes>
+    <node>java.io.BufferedOutputStream</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

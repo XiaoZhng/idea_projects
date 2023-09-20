@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>index.html</h1><br>
+<a th:href="@{/hello/testRequestMapping}">success</a><br>
+<a th:href="@{/hello/testRequestMapping}">测试RequestMapping(在类上)</a><br>
+<a th:href="@{testRequestMapping}">测试RequestMapping(value属性值 get请求)</a><br>
+<form th:action="@{/testRequestMapping}" method="post">
+    <input type="submit">
+</form><br>
+<!--a链接的请求都是get请求-->
+<a th:href="@{/testMapping}">测试GetMapping</a><br>
+<!--form表单的method请求只能是 get和post，填写其他值默认为get-->
+<form th:action="@{/testMapping}" method="post">
+    <input type="submit" value="测试PostMapping">
+</form><br>
+<a th:href="@{testParams(username='admin')}">测试RequestMapping(Params属性username)</a><br>
+<a th:href="@{/testParamsAndPassword(username='admin', password=123)}">测试RequestMapping(Params属性username，password=123)</a><br>
+<a th:href="@{testHeader}">测试RequestMapping(header属性)</a><br>
+<a th:href="@{qq/aaa}">测试RequestMapping(支持ant风格的路径)</a><br>
+<a th:href="@{/testRest/admin/123456}">测试RequestMapping(支持路径中的占位符)</a><br>
+</body>
+</html>

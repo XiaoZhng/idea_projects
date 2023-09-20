@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>药品添加</title>
+    <style>
+        .big{
+            width: 50%;
+            height: 30%;
+            border: 1px solid #000000;
+            background: #cce5ff;
+            margin: 100px auto;
+        }
+        input{
+            margin: 3%;
+        }
+    </style>
+</head>
+<body>
+<div class="big">
+    <form action="/addDrugs" method="post" class="contact-form">
+        药品名称：<input type="text" name="drugsName" id="drugsName" />
+        生产厂家：<input type="text" name="factory" id="factory" /><br />
+        规格：<input type="text" name="specifications" id="specifications" />
+        单位：<input type="text" name="company" id="company" /><br />
+        单价：<input type="text" name="price" id="price" /><br />
+        <input type="submit" value="保存" />
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+server:
+  ipAddress: 192.168.1.1 #驼峰
+#  ipaddress: 192.168.1.1
+#  ip-address: 192.168.1.1 #烤肉串模式
+#  ip_Address: 192.168.1.1 #unline(常规)
+#  IPADDRESS: 192.168.1.1
+#  IP_ADDRESS: 192.168.1.1 #常量
+#  IP_ADD_RE_SS: 192.168.1.2
+#  IP_AD-D_RE_SS: 192.168.1.2
+#  ip-Address: 192.168.1.1
+  port: 8080
+  timeout: -1
+  serverTimeOut: 10
+  dataSize: 2
+
+datasource:
+  driverClassName: com.mysql.jdbc.Driver123
+  password: "0123"

@@ -1,0 +1,25 @@
+test:
+  prop: testProperties
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/boot_db?serverTimezone=UTC
+      username: root
+      password: root
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix:
+      id-type: auto
+  configuration:
+    #使用配置方式开启日志，设置日志输出方式为标准输出
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+testcase:
+  book:
+    id: ${random.int(1,5)}
+    name: ${random.value}
+    type: ${random.value)}
+    context: ${random.uuid}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <!--1.配置 User对象创建-->
+        <bean id="user" class="com.spring.test.User"></bean>
+
+    <!--2.set方法注入属性-->
+<!--    <bean id="book" class="com.spring.test.Book">-->
+<!--        &lt;!&ndash;使用property完成属性注入-->
+<!--        name：类里面属性名称-->
+<!--        value：向属性注入的值-->
+<!--        &ndash;&gt;-->
+<!--        <property name="name" value="三体"></property>-->
+<!--        <property name="author" value="刘慈欣"></property>-->
+<!--    </bean>-->
+
+    <!--3.有参数构造注入属性-->
+<!--    <bean id="order" class="com.spring.test.Order">-->
+<!--        <constructor-arg name="name" value="张三"></constructor-arg>-->
+<!--        <constructor-arg name="age" value="18"></constructor-arg>-->
+<!--    </bean>-->
+
+    <!--4.p名称空间注入-->
+    <!--<bean id="book" class="com.spring.test.Book" p:name="三体2" p:author="刘慈欣">-->
+    <!--</bean>-->
+
+<!--    &lt;!&ndash;null值&ndash;&gt;-->
+<!--    <bean id="book" class="com.spring.test.Book">-->
+<!--        <property name="name" value="张三"></property>-->
+<!--        <property name="author" >-->
+<!--            <null></null>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+    <!--属性值包含特殊符合-->
+    <!--
+    1.把<>进行转义 &lt; &gt;
+    2.把带特殊符号内容写到CDATA
+    -->
+    <bean id="book" class="com.spring.test.Book">
+        <property name="name" value="张三"></property>
+<!--        <property name="author" value="&lt;&lt;北京&gt;&gt;"> &lt;!&ndash; 张三:<<北京>> &ndash;&gt;-->
+<!--        </property>-->
+
+        <property name="author">
+            <value><![CDATA[<<北京>>]]></value>
+        </property>
+    </bean>
+</beans>

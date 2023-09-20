@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.zledu.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <servlet-name>OrderClientServlet</servlet-name>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>TransactionFilter</filter-name>
+        <filter-class>com.zledu.filter.TransactionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>TransactionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.zledu.servlet.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/UserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookMangerServlet</servlet-name>
+        <servlet-class>com.zledu.servlet.BookMangerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookMangerServlet</servlet-name>
+        <url-pattern>/BookMangerServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IndexBookServlet</servlet-name>
+        <servlet-class>com.zledu.servlet.IndexBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexBookServlet</servlet-name>
+        <url-pattern>/IndexBookServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--    使用谷歌的验证码jar包，需要注册 servlet-->
+    <servlet>
+        <servlet-name>KaptchaServlet</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+        <init-param>
+            <param-name>kaptcha.session.key</param-name>
+            <param-value>sessionCode</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>KaptchaServlet</servlet-name>
+        <url-pattern>/code.jpg</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.zledu.servlet.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderClientServlet</servlet-name>
+        <servlet-class>com.zledu.servlet.OrderClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderClientServlet</servlet-name>
+        <url-pattern>/OrderClientServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderManagerServlet</servlet-name>
+        <servlet-class>com.zledu.servlet.OrderManagerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderManagerServlet</servlet-name>
+        <url-pattern>/OrderManagerServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

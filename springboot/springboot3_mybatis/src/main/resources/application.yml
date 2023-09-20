@@ -1,0 +1,15 @@
+# 应用名称
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #修改url，添加 serverTimezone时区设定
+    url: jdbc:mysql://localhost:3306/boot_db?serverTimezone=UTC
+    username: root
+    password: root
+
+#数据库名如果产生自动映射，就会出现表名找不到异常，需要配置mybatis-plus
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      #加名称前缀
+#      table-prefix: db_

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        onload = function (){
+            var btn = document.getElementById("btn");
+            btn.onclick = function (){
+                location = "../Servlet4";
+            };
+        };
+    </script>
+</head>
+<body>
+<a href="../Servlet4">Servlet4</a><br>
+<input type="button" value="访问servlet4" id="btn"><br>
+<form action="../Servlet4" method="post">
+    <input type="submit">
+</form>
+</body>
+</html>

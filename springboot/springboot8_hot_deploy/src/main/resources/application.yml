@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/boot_db?serverTimezone=UTC
+      username: root
+      password: root
+
+  devtools:
+    restart:
+      # 设置不参与热部署的文件或文件夹
+      exclude: static/**, public/**, config/application.yml
+      enabled: false # 关闭热部署
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix:
+      id-type: auto
+  configuration:
+    #使用配置方式开启日志，设置日志输出方式为标准输出
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

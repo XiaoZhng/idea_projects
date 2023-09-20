@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.io.Reader</OriginalElement>
+  <nodes>
+    <node x="24.0" y="89.0">java.io.Closeable</node>
+    <node x="200.0" y="89.0">java.lang.Readable</node>
+    <node x="79.0" y="315.0">java.io.BufferedReader</node>
+    <node x="116.5" y="178.0">java.io.Reader</node>
+    <node x="0.0" y="0.0">java.lang.AutoCloseable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.io.Reader" target="java.lang.Readable">
+      <point x="35.25" y="-43.5" />
+      <point x="222.25" y="153.0" />
+      <point x="272.0" y="153.0" />
+      <point x="0.0" y="19.5" />
+    </edge>
+    <edge source="java.io.Closeable" target="java.lang.AutoCloseable">
+      <point x="0.0" y="-19.5" />
+      <point x="0.0" y="19.5" />
+    </edge>
+    <edge source="java.io.BufferedReader" target="java.io.Reader">
+      <point x="0.0" y="-43.5" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="java.io.Reader" target="java.io.Closeable">
+      <point x="-35.25" y="-43.5" />
+      <point x="151.75" y="153.0" />
+      <point x="102.0" y="153.0" />
+      <point x="0.0" y="19.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="159.0" y="315.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

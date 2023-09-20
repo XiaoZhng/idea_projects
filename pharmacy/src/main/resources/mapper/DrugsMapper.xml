@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pharmacy.mapper.DrugsMapper">
+
+    <resultMap id="BaseResultMap" type="com.pharmacy.domain.Drugs">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="drugsName" column="drugsName" jdbcType="VARCHAR"/>
+            <result property="factory" column="factory" jdbcType="VARCHAR"/>
+            <result property="specifications" column="specifications" jdbcType="VARCHAR"/>
+            <result property="company" column="company" jdbcType="VARCHAR"/>
+            <result property="price" column="price" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,drugsName,factory,
+        specifications,company,price
+    </sql>
+</mapper>

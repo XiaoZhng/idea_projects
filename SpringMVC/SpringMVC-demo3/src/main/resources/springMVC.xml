@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:mv="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <!--注解扫描-->
+    <context:component-scan base-package="com.mvc"></context:component-scan>
+
+    <!--配置 thymeleaf-->
+    <bean id="viewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="order" value="1"/>
+        <property name="characterEncoding" value="UTF-8"/>
+        <property name="templateEngine">
+            <bean class="org.thymeleaf.spring5.SpringTemplateEngine">
+                <property name="templateResolver">
+                    <bean class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+
+                        <!-- 视图前缀 -->
+                        <property name="prefix" value="/WEB-INF/templates/"/>
+
+                        <!-- 视图后缀 -->
+                        <property name="suffix" value=".html"/>
+                        <property name="templateMode" value="HTML5"/>
+                        <property name="characterEncoding" value="UTF-8"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <!--
+        在控制器方法中，仅仅用来实现页面跳转，即只需要设置视图名称时，可以将处理器方法使用 view-controller标签表示
+        path：设置处理请求的地址
+        view-name：设置请求地址所对应的视图名称
+    -->
+    <mvc:view-controller path="/" view-name="index"></mvc:view-controller>
+    <mvc:view-controller path="/test_rest" view-name="test_rest"></mvc:view-controller>
+
+    <!--
+        当SpringMVC中设置任何一个view-controller时，其他控制器中的请求映射将全部失效，
+        此时需要在SpringMVC的核心配置文件中设 置开启mvc注解驱动的标签
+    -->
+    <!--开启mvc的注解驱动-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <!--<mv:annotation-driven />-->
+</beans>

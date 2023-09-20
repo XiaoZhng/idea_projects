@@ -1,0 +1,43 @@
+#SpringBoot配置文件加载顺序:
+#  application.properties > application.yml > application.yaml
+#常用配置文件种类:
+#  application.yml
+#不同配置文件中相同配置按照加载优先级相互覆盖，不同配置文件中不同配置全部保留
+
+server:
+  port: 8889
+
+user1: jack
+
+user2:
+  name: tom
+  age: 18
+
+user3:
+  - name: lucy
+    age: 20
+  - name: jams
+    age: 21
+
+user4: [{name: 111, age: 20}, {name: 222, age: 21}]
+
+user5:
+  -
+    name: lucy
+    age: 20
+  -
+    name: jams
+    age: 21
+
+baseDir: c:\window
+
+#使用${属性名}引用数据
+tempDir: ${basedir}\temp
+#使用引号包裹的字符串，其中的转义字符可以生效
+tempDir2: "${basedir}\temp \t1 \t2"
+
+datasource:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:8080/springBoot_db
+  username: root
+  password: root

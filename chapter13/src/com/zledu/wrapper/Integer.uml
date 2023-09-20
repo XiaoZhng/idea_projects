@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.lang.Integer</OriginalElement>
+  <nodes>
+    <node x="232.5" y="84.0">java.lang.Comparable</node>
+    <node x="184.0" y="0.0">java.lang.Object</node>
+    <node x="106.5" y="84.0">java.lang.Number</node>
+    <node x="174.0" y="168.0">java.lang.Integer</node>
+    <node x="0.0" y="0.0">java.io.Serializable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.lang.Integer" target="java.lang.Number">
+      <point x="-29.0" y="-17.0" />
+      <point x="203.0" y="143.0" />
+      <point x="159.5" y="143.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="java.lang.Number" target="java.lang.Object">
+      <point x="26.5" y="-17.0" />
+      <point x="186.0" y="59.0" />
+      <point x="237.0" y="59.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="java.lang.Number" target="java.io.Serializable">
+      <point x="-26.5" y="-17.0" />
+      <point x="133.0" y="59.0" />
+      <point x="82.0" y="59.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="java.lang.Integer" target="java.lang.Comparable">
+      <point x="29.0" y="-17.0" />
+      <point x="261.0" y="143.0" />
+      <point x="304.5" y="143.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="188.5" y="101.0" />
+  <SelectedNodes>
+    <node>java.lang.Object</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

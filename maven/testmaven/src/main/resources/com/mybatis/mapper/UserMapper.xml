@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.UserMapper">
+
+    <!--int insertUser();-->
+    <insert id="insertUser">
+        insert into user1 values(7, 'lll', 11)
+    </insert>
+
+    <!--User1 getUser(@Param("id") Integer id);-->
+    <select id="getUser" resultType="User1">
+        SELECT * FROM user1 where id = #{id}
+    </select>
+
+    <!--List<User1> getAllUser();-->
+    <select id="getAllUser" resultType="User1">
+        select * from user1
+    </select>
+
+</mapper>

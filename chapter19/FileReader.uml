@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.io.FileReader</OriginalElement>
+  <nodes>
+    <node x="181.5" y="84.0">java.io.Closeable</node>
+    <node x="336.5" y="84.0">java.lang.Readable</node>
+    <node x="367.0" y="323.0">java.io.BufferedReader</node>
+    <node x="253.5" y="168.0">java.io.Reader</node>
+    <node x="71.5" y="478.0">java.io.FileReader</node>
+    <node x="0.0" y="300.0">java.io.InputStreamReader</node>
+    <node x="162.5" y="0.0">java.lang.AutoCloseable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.io.Reader" target="java.io.Closeable">
+      <point x="-35.25" y="-41.0" />
+      <point x="288.75" y="143.0" />
+      <point x="249.0" y="143.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="java.io.Reader" target="java.lang.Readable">
+      <point x="35.25" y="-41.0" />
+      <point x="359.25" y="143.0" />
+      <point x="399.0" y="143.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="java.io.Closeable" target="java.lang.AutoCloseable">
+      <point x="0.0" y="-17.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="java.io.BufferedReader" target="java.io.Reader">
+      <point x="0.0" y="-41.0" />
+      <point x="474.5" y="275.0" />
+      <point x="359.25" y="275.0" />
+      <point x="35.25" y="41.0" />
+    </edge>
+    <edge source="java.io.InputStreamReader" target="java.io.Reader">
+      <point x="0.0" y="-64.0" />
+      <point x="173.5" y="275.0" />
+      <point x="288.75" y="275.0" />
+      <point x="-35.25" y="41.0" />
+    </edge>
+    <edge source="java.io.FileReader" target="java.io.InputStreamReader">
+      <point x="0.0" y="-52.5" />
+      <point x="0.0" y="64.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="207.5" y="185.0" />
+  <SelectedNodes>
+    <node>java.io.BufferedReader</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改信息</title>
+    <style>
+        .big {
+            width: 50%;
+            height: 30%;
+            border: 1px solid #000000;
+            background: #cce5ff;
+            margin: 100px auto;
+        }
+        input {
+            margin: 3%;
+        }
+    </style>
+</head>
+<body>
+<div class="big">
+    <form th:action="@{/update}" method="post">
+        <input type="hidden" name="id" id="id" th:value="${updateDrugs.id}" />
+        药品名称：<input type="text" name="drugsName" id="drugsName" th:value="${updateDrugs.drugsName}" />
+        生产厂家：<input type="text" name="factory" id="factory" th:value="${updateDrugs.factory}" /><br/>
+        规格：<input type="text" name="specifications" id="specifications" th:value="${updateDrugs.specifications}" />
+        单位：<input type="text" name="company" id="company" th:value="${updateDrugs.company}" /><br/>
+        单价：<input type="text" name="price" id="price" th:value="${updateDrugs.price}" /><br/>
+        <input type="submit" value="修改信息"/>
+    </form>
+</div>
+</body>
+</html>

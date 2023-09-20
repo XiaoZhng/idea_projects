@@ -1,0 +1,41 @@
+server:
+  port: 8081
+
+#spring:
+#  datasource:
+#    druid:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://localhost:3306/boot_db?serverTimezone=UTC
+#      username: root
+#      password: root
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      table-prefix:
+#      id-type: auto
+#  configuration:
+#    #使用配置方式开启日志，设置日志输出方式为标准输出
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+management:
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+
+info:
+  appName: @project.artifactId@
+  version: @project.version@
+  company: boot
+  author: Alonso
